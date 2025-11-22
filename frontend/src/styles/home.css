@@ -1,0 +1,367 @@
+/* ========== HERO SLIDER (TRANG CHỦ) ========== */
+
+.hero-section {
+  padding: 16px 40px 20px;
+  background-color: #f6f6f6;
+}
+
+.hero-inner {
+  background: linear-gradient(90deg, #ffcf2d, #ff8e2b);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.hero-left {
+  padding: 24px 26px;
+  color: #b61628;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-left h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.hero-desc {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hero-small {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.hero-btn {
+  padding: 8px 18px;
+  border-radius: 4px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.hero-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* nếu còn .hero-laptop, .hero-laptop-1, .hero-laptop-2
+   mà bạn không dùng nữa thì có thể xóa luôn cho gọn */
+
+.hero-image {
+  max-width: 100%;
+  max-height: 520px;   /* 260 x 2 = 520, cao gấp đôi */
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+
+
+.hero-laptop {
+  position: absolute;
+  bottom: 16px;
+  width: 55%;
+  height: 65%;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff, #e3f0ff);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.28);
+}
+
+.hero-laptop-1 {
+  left: 14%;
+  transform: rotate(-6deg);
+}
+
+.hero-laptop-2 {
+  right: 10%;
+  transform: rotate(4deg);
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.hero-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d2d2d2;
+}
+
+.hero-dot.active {
+  background: #ff4b8b;
+}
+
+/* ========== KHỐI SẢN PHẨM + CỘT GIẢM GIÁ (TRANG CHỦ) ========== */
+
+.product-tabs-wrapper {
+  background-color: #f6f6f6;
+  padding: 0 40px 40px;
+}
+
+.product-tabs {
+  padding: 10px 0 0;
+}
+
+/* Top bar: nút LAPTOP / ĐIỆN THOẠI + "Xem tất cả" */
+
+.product-tabs-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-tabs-left {
+  display: flex;
+  gap: 8px;
+}
+
+.product-tab-btn {
+  border: 1px solid #f63b7b;
+  background: #ffffff;
+  color: #f63b7b;
+  padding: 6px 16px;
+  border-radius: 4px 4px 0 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.product-tab-btn.active {
+  background: #f63b7b;
+  color: #fff;
+}
+
+.product-see-all {
+  border: none;
+  background: transparent;
+  color: #f63b7b;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Bố cục: bên trái là hàng sản phẩm, bên phải là cột giảm giá */
+
+.product-layout-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 16px;
+}
+
+.product-tabs-left-only {
+  flex: 1;
+}
+
+/* Hàng sản phẩm trượt ngang */
+
+.product-row-scroll {
+  background: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #eee;
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Card sản phẩm (4 cái / 1 màn hình desktop) */
+
+.product-card {
+  flex: 0 0 23%;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 260px; 
+}
+
+.product-thumb {
+  width: 100%;
+  /* cao tự tính theo tỉ lệ vuông 1:1 để mọi ảnh đồng bộ, không méo */
+  aspect-ratio: 1 / 1;
+  height: auto;
+
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 8px;
+
+  /* quan trọng: không cắt ảnh, co vừa khung */
+  object-fit: contain;
+  object-position: center;
+  display: block; /* bỏ khoảng trắng baseline của img */
+}
+
+/* fallback cho trình duyệt cũ không hỗ trợ aspect-ratio */
+@supports not (aspect-ratio: 1 / 1) {
+  .product-thumb {
+    height: 180px;     /* hoặc 170–200 tuỳ layout */
+  }
+}
+
+.product-name {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.3;
+
+  min-height: 40px;         /* đủ cho 2 dòng */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.product-old {
+  font-size: 12px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.product-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e53935;
+}
+
+.product-add-btn {
+  margin-top: auto;         /* thay vì 6px, đổi thành auto */
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background: #ff4b8b;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.product-add-btn:hover {
+  background: #e13a79;
+}
+
+/* ========== CỘT "SẢN PHẨM GIẢM GIÁ" ========== */
+
+.discount-sidebar {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.sidebar-title {
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+/* danh sách item */
+
+.sidebar-list {
+  margin: 0;
+  padding: 0;
+}
+
+/* mỗi item giảm giá */
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sidebar-item:last-child {
+  border-bottom: none;
+}
+
+/* khung ảnh nhỏ bên trái */
+
+.sidebar-thumb {
+  width: 80px;          /* ngang 80, cao 60 giống mẫu */
+  height: 60px;
+  margin-right: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+/* ảnh bên trong khung */
+
+.sidebar-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* vừa khung, không cắt chữ */
+  display: block;
+}
+
+/* text bên phải */
+
+.sidebar-text {
+  flex: 1;
+}
+
+.sidebar-name {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0 0 4px;
+  color: #333;
+}
+
+.sidebar-old {
+  font-size: 12px;
+  text-decoration: line-through;
+  color: #999;
+  margin: 0;
+}
+
+.sidebar-new {
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+/* ========== RESPONSIVE HOME ========== */
+
+@media (max-width: 1024px) {
+  .product-layout-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section,
+  .product-tabs-wrapper {
+    padding: 16px;
+  }
+
+  .product-card {
+    flex: 0 0 60%;
+    min-width: 200px;
+  }
+}
+

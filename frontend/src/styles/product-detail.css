@@ -1,0 +1,157 @@
+/* ===== Product Detail (pd-*) ===== */
+
+.pd-page {
+  padding: 20px 40px 40px;
+  background: #f6f6f6;
+}
+
+.pd-layout {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 24px;
+}
+
+/* --- gallery --- */
+.pd-gallery .pd-main {
+  position: relative;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px;
+}
+.pd-gallery .pd-main img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+.pd-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4b8b;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.pd-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.pd-thumb {
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px;
+  width: 72px;
+  height: 72px;
+  cursor: pointer;
+}
+.pd-thumb.active { border-color: #ff4b8b; }
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- info --- */
+.pd-info {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.pd-title { font-size: 22px; margin: 0 0 6px; }
+
+.pd-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #6b7280;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.pd-stock.ok { color: #16a34a; font-weight: 600; }
+.pd-stock.out { color: #ef4444; font-weight: 600; }
+
+.pd-price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.pd-old { color: #9ca3af; text-decoration: line-through; font-size: 14px; }
+.pd-price { color: #e53935; font-size: 26px; font-weight: 800; }
+
+.pd-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+.pd-qty { display: inline-flex; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; }
+.pd-qty button { width: 36px; height: 36px; border: 0; background: #f3f4f6; cursor: pointer; font-size: 18px; }
+.pd-qty input { width: 56px; text-align: center; border: 0; outline: none; }
+
+.pd-actions { display: flex; gap: 10px; }
+.pd-btn-primary {
+  background: #ff4b8b; color: #fff; border: 0; border-radius: 8px;
+  padding: 10px 16px; cursor: pointer; font-weight: 600;
+}
+.pd-btn-secondary {
+  border: 1px solid #ff4b8b; color: #ff4b8b !important; background: #fff;
+  border-radius: 8px; padding: 10px 16px; font-weight: 600; text-decoration: none;
+}
+
+.pd-policies {
+  list-style: none; margin-top: 14px; padding-left: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 12px; font-size: 13px; color: #374151;
+}
+.pd-policies i { margin-right: 6px; color: #10b981; }
+
+/* --- mô tả --- */
+.pd-desc {
+  margin-top: 18px; background: #fff; border: 1px solid #eee;
+  border-radius: 10px; padding: 16px 18px;
+}
+.pd-desc h2 { margin: 0 0 8px; font-size: 18px; }
+.pd-desc-content { font-size: 14px; color: #374151; line-height: 1.6; white-space: pre-line; }
+
+/* --- related --- */
+.pd-related { margin-top: 18px; }
+.pd-related-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.pd-related-more { color: #f63b7b; font-size: 13px; }
+.pd-related-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.pd-card {
+  position: relative; background: #fff; border: 1px solid #eee; border-radius: 10px;
+  padding: 10px; text-decoration: none; color: inherit;
+}
+.pd-card-badge {
+  position: absolute; top: 10px; left: 10px; background: #ff4b8b; color: #fff;
+  font-size: 12px; border-radius: 999px; padding: 3px 7px;
+}
+.pd-card-thumb {
+  width: 100%; aspect-ratio: 1 / 1; background: #fff; border: 1px solid #eee;
+  border-radius: 8px; padding: 8px; margin-bottom: 6px;
+}
+.pd-card-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.pd-card-name { font-size: 14px; min-height: 38px; }
+.pd-card-old { font-size: 12px; color: #9ca3af; text-decoration: line-through; }
+.pd-card-price { font-size: 15px; font-weight: 700; color: #e53935; }
+
+/* responsive */
+@media (max-width: 1024px) {
+  .pd-layout { grid-template-columns: 1fr; }
+  .pd-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .pd-gallery .pd-main img { height: 360px; }
+  .pd-card-thumb { height: 200px; }
+}

@@ -1,0 +1,165 @@
+/* HEADER SEARCH BOX + DROPDOWN */
+
+.header-search {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 24px;
+  position: relative; /* để dropdown bám vào */
+}
+
+.header-search .search-wrapper {
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 4px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.header-search .search-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+.header-search .search-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}
+
+.header-search .search-icon-btn {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* DROPDOWN */
+
+.search-suggest-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+  z-index: 50;
+  overflow: hidden;
+}
+
+.search-suggest-header {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.search-suggest-empty {
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.search-suggest-item {
+  width: 100%;
+  border: none;
+  background: #ffffff;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.search-suggest-item:hover {
+  background: #f9fafb;
+}
+
+.search-suggest-thumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-suggest-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-suggest-thumb .thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #e5e7eb;
+}
+
+.search-suggest-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-suggest-info .suggest-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggest-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.suggest-price {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.suggest-old-price {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.suggest-discount {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* Nút xem tất cả */
+
+.search-suggest-view-all {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 8px 12px;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-suggest-view-all:hover {
+  background: #eff6ff;
+}

@@ -1,0 +1,62 @@
+/* ===== CONTACT PAGE ===== */
+.contact-page { padding: 20px 40px 40px; background:#f6f6f6; }
+.breadcrumb { font-size:13px; margin-bottom:14px; }
+.breadcrumb span { color:#999; }
+.breadcrumb strong { color:#333; }
+
+/* top quick cards */
+.contact-top { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; margin-bottom:16px; }
+.ct-card {
+  display:flex; gap:10px; align-items:center; background:#fff; border:1px solid #eee; border-radius:12px; padding:12px 14px;
+}
+.ct-card i { font-size:18px; color:#ff4b8b; }
+.ct-card h4 { margin:0 0 4px; }
+
+/* grid */
+.contact-grid { display:grid; grid-template-columns: 1fr 360px; gap:16px; }
+
+/* cards */
+.contact-card { background:#fff; border:1px solid #eee; border-radius:12px; padding:16px 18px; }
+.contact-card h2 { margin:0 0 8px; font-size:18px; }
+.contact-sub { color:#6b7280; margin-bottom:10px; }
+
+/* form */
+.contact-form .row { display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.contact-form .col { display:flex; flex-direction:column; gap:6px; }
+.contact-form .col-full { grid-column: span 2; }
+.contact-form input, .contact-form textarea {
+  border:1px solid #e5e7eb; border-radius:10px; padding:10px 12px; outline:none; background:#fafafa;
+}
+.form-actions { margin-top:10px; }
+.contact-btn {
+  border:none; background:#ff4b8b; color:#fff; border-radius:10px; padding:10px 16px; cursor:pointer; font-weight:600;
+}
+.contact-success { background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; border-radius:10px; padding:8px 12px; margin-bottom:10px; }
+
+/* info */
+.info-list { list-style:none; margin:6px 0 12px; padding:0; }
+.info-list li { display:flex; gap:8px; padding:6px 0; color:#374151; }
+.info-list i { color:#10b981; }
+
+.contact-social { display:flex; gap:10px; }
+.contact-social a {
+  width:32px; height:32px; display:grid; place-items:center; border:1px solid #eee; border-radius:999px; color:#111; text-decoration:none;
+}
+
+.map-wrap { border-radius:12px; overflow:hidden; border:1px solid #eee; }
+
+/* FAQ */
+.faq { border:1px solid #eee; border-radius:10px; padding:10px 12px; margin-top:8px; }
+.faq summary { cursor:pointer; font-weight:600; }
+.faq p { color:#4b5563; margin:8px 0 0; }
+
+/* responsive */
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .contact-top { grid-template-columns: 1fr; }
+  .contact-form .row { grid-template-columns: 1fr; }
+  .contact-form .col-full { grid-column: span 1; }
+  .contact-page { padding: 16px; }
+}

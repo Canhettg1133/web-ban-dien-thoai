@@ -1,0 +1,240 @@
+/* ================= HEADER TRÊN ================= */
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* chia 3 cụm sang trái/giữa/phải */
+  padding: 8px 40px;
+  column-gap: 32px;               /* khoảng cách giữa 3 cụm */
+}
+
+/* Logo */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;                 /* không co giãn */
+}
+
+.logo-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4b8b, #ffc446);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-phone-outline {
+  width: 28px;
+  height: 42px;
+  border-radius: 8px;
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-phone-screen {
+  width: 18px;
+  height: 30px;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.logo-title {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logo-main-text {
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #ff1f6b;
+}
+
+.logo-sub-text {
+  font-size: 14px;
+  color: #ff7b00;
+}
+
+/* Search */
+
+.header-search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-search .search-wrapper {
+  width: 100%;
+  max-width: 600px;               /* chỉnh 560–640 tùy bạn */
+}
+
+.search-wrapper {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-icon-btn {
+  width: 46px;
+  height: 38px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Tài khoản + giỏ hàng */
+
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;                      /* khoảng cách giữa nút đăng nhập và giỏ */
+  flex: 0 0 auto;                 /* không cho nó bị ép quá sát */
+  white-space: nowrap;            /* không bị xuống dòng */
+}
+
+.header-right-link {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-right-link.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-count {
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff2b65;
+  color: #fff;
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== RESPONSIVE HEADER ===== */
+
+@media (max-width: 1024px) {
+  .header-top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+  }
+}
+
+/* ===== TÀI KHOẢN KHÁCH TRÊN HEADER ===== */
+
+.header-account-dropdown {
+  position: relative; 
+}
+
+.header-account-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-account-name {
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+.header-account-caret {
+  font-size: 10px;
+}
+
+.header-account-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 190px;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
+  padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: all 0.15s ease;
+  z-index: 40;
+}
+
+.header-account-dropdown:hover .header-account-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header-account-item {
+  width: 100%;
+  padding: 8px 14px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.header-account-item i {
+  font-size: 14px;
+}
+
+.header-account-item:hover {
+  background: #f3f4f6;
+}
+
+.header-account-greeting {
+  font-weight: 500;
+  cursor: default;
+}
+
+.header-account-greeting:hover {
+  background: transparent;
+}
+
+.header-account-logout {
+  color: #b91c1c;
+}

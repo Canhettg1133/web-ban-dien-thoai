@@ -1,0 +1,222 @@
+/* ========== THANH NAV CHÍNH ========== */
+
+.main-nav {
+  display: flex;
+  align-items: stretch;
+  padding: 0 40px;
+  background-color: #3c3c3c;
+  color: #fff;
+  height: 52px;
+}
+
+/* --- Danh mục sản phẩm bên trái --- */
+
+.category-menu {
+  position: relative;
+  margin-right: 20px;
+}
+
+.category-toggle {
+  height: 100%;
+  padding: 0 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #ff4b94, #ff7a00);
+  color: #fff;
+}
+
+.category-icon i {
+  font-size: 16px;
+}
+
+.category-caret i {
+  font-size: 12px;
+}
+
+/* Dropdown danh mục sản phẩm */
+
+.category-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  color: #333;
+  min-width: 220px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  border-radius: 0 0 4px 4px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: all 0.18s ease;
+  z-index: 20;
+}
+
+.category-menu:hover .category-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.category-item {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.category-item:hover {
+  background-color: #f6f6f6;
+}
+
+/* --- Menu chính giữa --- */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 13px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 4px;
+}
+
+.nav-item.active a {
+  font-weight: 600;
+}
+
+/* chỉ đổi màu cho menu cấp 1 (TRANG CHỦ, TIN TỨC, LIÊN HỆ, SẢN PHẨM) */
+.nav-links > .nav-item > a:hover,
+.nav-links > .nav-item > .nav-main-label:hover {
+  color: rgba(27, 27, 24, 0.667);
+}
+
+
+/* Dropdown "SẢN PHẨM" */
+
+.nav-item.has-dropdown .nav-caret {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  color: #333;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: all 0.18s ease;
+  z-index: 20;
+}
+
+.nav-item.has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 8px 14px;
+  font-size: 15px;      /* to hơn */
+  font-weight: 700;     /* đậm hơn */
+  color: #000;          /* màu đen */
+  text-decoration: none;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* --- Thông tin bên phải nav (giờ làm, số điện thoại) --- */
+
+.nav-right-info {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 13px;
+}
+
+.nav-info-block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ========== RESPONSIVE NAV ========== */
+
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 0 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-right-info {
+    margin-left: auto;
+  }
+}
+/* ===== DROPDOWN SẢN PHẨM – hiện đại hơn ===== */
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.22);
+  padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.18s ease;
+  z-index: 30;
+}
+
+/* hover vào SẢN PHẨM là xổ menu */
+.nav-item.has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* từng dòng danh mục trong dropdown */
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827 !important;   /* luôn màu đen, không bị vàng */
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-dropdown-item:hover {
+  background-color: #f3f4f6;
+  color: #111827 !important;
+}
